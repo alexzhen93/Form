@@ -218,7 +218,7 @@
                         <div class="custom-control custom-checkbox">
                             <input type="checkbox" class="custom-control-input" id="shippingAddress"
                                 data-toggle="collapse" data-target="#SameAsShippingAddress" aria-expanded="true"
-                                aria-controls="SameAsShippingAddress">
+                                aria-controls="SameAsShippingAddress" checked>
                             <label for="shippingAddress" class="custom-control-label">Shipping address is the same as my
                                 billing
                                 address</label>
@@ -229,12 +229,12 @@
                                 time</label>
                         </div>
                         <hr class="mb-3">
-
-                        <h1 class="col-mb-4 collapse show" id="SameAsShippingAddress" data-parent="#collapseShipping">
+                    </div>
+                    <div class="collapse" id="SameAsShippingAddress" data-parent="#collapseShipping">
+                        <h1 class="col-mb-4">
                             Shipping Address</h1>
-                        <legend class="col-mb-3 collapse show" id="SameAsShippingAddress"
-                            data-parent="#collapseShipping">Enter your name and address:</legend>
-                        <div class="form-row collapse show" id="SameAsShippingAddress" data-parent="#collapseShipping">
+                        <legend class="col-mb-3">Enter your name and address:</legend>
+                        <div class="form-row">
                             <div class="col-md-6 mb-3">
                                 <input type="text" class="form-control" id="firstName" placeholder="First Name"
                                     maxlength="14" required>
@@ -257,7 +257,7 @@
                             </div>
                         </div>
 
-                        <div class="form-row collapse show" id="SameAsShippingAddress" data-parent="#collapseShipping">
+                        <div class="form-row">
                             <div class="col-md-6 mb-3">
                                 <input type="text" class="form-control" id="address" placeholder="Street Address"
                                     maxlength="30" required>
@@ -274,7 +274,7 @@
                             </div>
                         </div>
 
-                        <div class="form-row collapse show" id="SameAsShippingAddress" data-parent="#collapseShipping">
+                        <div class="form-row">
                             <div class="col-md-4 mb-3">
                                 <select value="US" class="custom-select" id="Country" required>
                                     <option value="AU">Australia</option>
@@ -319,19 +319,23 @@
                                 </div>
                             </div>
                         </div>
+                        <hr class="mb-3">
                     </div>
-                    <hr class="mb-3 collapse show" id="SameAsShippingAddress" data-parent="#collapseShipping">
 
                     <h1 class="col-mb-4 ">Payment</h1>
                     <div class="accordion" id="collapsePayment">
-                        <div class="card mb-3">
+                        <div class="card mb-3 d-flex flex-row justify-content-between align-items-center">
                             <div class="card-body">
                                 <h5>Credit or Debit Card</h5>
                                 <p class="small">Apple Card, Visa, Mastercard, AMEX, Discover, UnionPay</p>
                             </div>
                         </div>
                     </div>
+                    <div class="col-mb-4 mb-3 collapse show" id="">
+                        <p>Enter your card information:</p>
+                        <input type="text" name="cards" id="cardNumber" placeholder="Credit/Debit Card Number">
 
+                    </div>
                     <div class="card mb-3">
                         <div class="card-body">
                             <img src="https://www.apple.com/v/apple-pay/m/images/shared/hero_logo__eo41ol524ga6_large_2x.png"
@@ -345,8 +349,6 @@
                                 alt="ApplePay" width="230">
                         </div>
                     </div>
-
-                    <div class="checkbox"></div>
 
                     <div class="col-md-16">
                         <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
