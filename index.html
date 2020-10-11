@@ -265,7 +265,7 @@
                         <div class="custom-control custom-checkbox">
                             <input type="checkbox" class="custom-control-input" id="shippingAddress"
                                 data-toggle="collapse" data-target="#SameAsShippingAddress" aria-expanded="true"
-                                aria-controls="SameAsShippingAddress" onsubmit="pass()" onclick="pass()">
+                                aria-controls="SameAsShippingAddress" onclick="ship()" checked>
                             <label for="shippingAddress" class="custom-control-label">Shipping address is the same as my
                                 billing
                                 address</label>
@@ -276,97 +276,98 @@
                                 time</label>
                         </div>
                         <hr class="mb-3">
-                    </div>
-                    <div class="collapse show" id="SameAsShippingAddress" data-parent="#collapseShipping">
-                        <h1 class="col-mb-4">
-                            Shipping Address</h1>
-                        <legend class="col-mb-3">Enter your name and address:</legend>
-                        <div class="form-row">
-                            <div class="col-md-6 mb-3">
-                                <input type="text" class="form-control" id="firstNameship" placeholder="First Name"
-                                    maxlength="14" required>
-                                <div class="invalid-feedback">
-                                    Please enter First Name.
-                                    <div class="valid-tooltip">
-                                        Looks good!
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <input type="text" class="form-control" id="lastNameship" placeholder="Last Name"
-                                    maxlength="20" required>
-                                <div class="invalid-feedback">
-                                    Please enter Last Name.
-                                    <div class="valid-tooltip">
-                                        Looks good!
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="form-row">
-                            <div class="col-md-6 mb-3">
-                                <input type="text" class="form-control" id="addressship" placeholder="Street Address"
-                                    maxlength="30" required>
-                                <div class="invalid-feedback">
-                                    Please enter Address.
-                                    <div class="valid-tooltip">
-                                        Looks good!
+                        <div class="collapse" id="SameAsShippingAddress" data-parent="#collapseShipping">
+                            <h1 class="col-mb-4">
+                                Shipping Address</h1>
+                            <legend class="col-mb-3">Enter your name and address:</legend>
+                            <div class="form-row">
+                                <div class="col-md-6 mb-3">
+                                    <input type="text" class="form-control" id="firstNameship" placeholder="First Name"
+                                        maxlength="14" required>
+                                    <div class="invalid-feedback">
+                                        Please enter First Name.
+                                        <div class="valid-tooltip">
+                                            Looks good!
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <input type="text" class="form-control" id="lastNameship" placeholder="Last Name"
+                                        maxlength="20" required>
+                                    <div class="invalid-feedback">
+                                        Please enter Last Name.
+                                        <div class="valid-tooltip">
+                                            Looks good!
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6 mb-3">
-                                <input type="text" class="form-control" id="Apt"
-                                    placeholder="Apt, Suite, Building (Optional)" maxl>
-                            </div>
-                        </div>
 
-                        <div class="form-row">
-                            <div class="col-md-4 mb-3">
-                                <select value="US" class="custom-select" id="Country">
-                                    <option value="AU">Australia</option>
-                                    <option value="CA">Canada</option>
-                                    <option value="CN">China</option>
-                                    <option value="FR">France</option>
-                                    <option value="DE">Germany</option>
-                                    <option value="IT">Italy</option>
-                                    <option value="MX">Mexico</option>
-                                    <option value="NL">Netherlands</option>
-                                    <option value="NZ">New Zealand</option>
-                                    <option value="ES">Spain</option>
-                                    <option value="SE">Sweden</option>
-                                    <option value="GB">United Kingdom</option>
-                                    <option value="US" selected="true">United States</option>
-                                </select>
-                                <div class="invalid-feedback">
-                                    Please select a Country.
-                                    <div class="valid-tooltip">
-                                        Looks good!
+                            <div class="form-row">
+                                <div class="col-md-6 mb-3">
+                                    <input type="text" class="form-control" id="addressship"
+                                        placeholder="Street Address" maxlength="30" required>
+                                    <div class="invalid-feedback">
+                                        Please enter Address.
+                                        <div class="valid-tooltip">
+                                            Looks good!
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <input type="text" class="form-control" id="Apt"
+                                        placeholder="Apt, Suite, Building (Optional)" maxl>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="col-md-4 mb-3">
+                                    <select value="US" class="custom-select" id="Country">
+                                        <option value="AU">Australia</option>
+                                        <option value="CA">Canada</option>
+                                        <option value="CN">China</option>
+                                        <option value="FR">France</option>
+                                        <option value="DE">Germany</option>
+                                        <option value="IT">Italy</option>
+                                        <option value="MX">Mexico</option>
+                                        <option value="NL">Netherlands</option>
+                                        <option value="NZ">New Zealand</option>
+                                        <option value="ES">Spain</option>
+                                        <option value="SE">Sweden</option>
+                                        <option value="GB">United Kingdom</option>
+                                        <option value="US" selected="true">United States</option>
+                                    </select>
+                                    <div class="invalid-feedback">
+                                        Please select a Country.
+                                        <div class="valid-tooltip">
+                                            Looks good!
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <input type="text" class="form-control" id="statesship" placeholder="State"
+                                        maxlength="30" required>
+                                    <div class="invalid-feedback">
+                                        Please enter State.
+                                        <div class="valid-tooltip">
+                                            Looks good!
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <input type="text" class="form-control" id="zipship" placeholder="Zip Code"
+                                        maxlength="10" required>
+                                    <div class="invalid-feedback">
+                                        Please enter Zip code.
+                                        <div class="valid-tooltip">
+                                            Looks good!
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4 mb-3">
-                                <input type="text" class="form-control" id="statesship" placeholder="State"
-                                    maxlength="30" required>
-                                <div class="invalid-feedback">
-                                    Please enter State.
-                                    <div class="valid-tooltip">
-                                        Looks good!
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 mb-3">
-                                <input type="text" class="form-control" id="zipship" placeholder="Zip Code"
-                                    maxlength="10" required>
-                                <div class="invalid-feedback">
-                                    Please enter Zip code.
-                                    <div class="valid-tooltip">
-                                        Looks good!
-                                    </div>
-                                </div>
-                            </div>
+                            <hr class="mb-3">
                         </div>
-                        <hr class="mb-3">
                     </div>
 
                     <h1 class="col-mb-4 ">Payment</h1>
@@ -374,83 +375,88 @@
                         <label class="form-row">
                             <input type="radio" name="check" class="card-input-element d-none" id="CardPayment"
                                 data-toggle="collapse" data-target="#Cardinfo" aria-expanded="true"
-                                aria-controls="Cardinfo" checked>
+                                aria-controls="Cardinfo" onclick="pay()" checked>
                             <div class="card card-body">
                                 <h5 class="">Credit or Debit Card</h5>
                                 <p class="small">Apple Card, Visa, Mastercard, AMEX, Discover, UnionPay</p>
                             </div>
                         </label>
+
+
+                        <div class="col-mb-4 mb-3 collapse show" id="Cardinfo" data-parent="#collapsePayment">
+                            <p>Enter your card information:</p>
+                            <div class="form-row">
+                                <div class="col-md-6 mb-3">
+                                    <input type="text" class="form-control" id="cardName"
+                                        placeholder="Full Name Display on Card" maxlength="34" required>
+                                    <div class="invalid-feedback">
+                                        Please enter Full Name Display on Card.
+                                        <div class="valid-tooltip">
+                                            Looks good!
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <input type="text" class="form-control" id="cards"
+                                        placeholder="Credit/Debit Card Number" maxlength="16" required>
+                                    <div class="invalid-feedback">
+                                        Please enter Card Number.
+                                        <div class="valid-tooltip">
+                                            Looks good!
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md-4 mb-3">
+                                    <input type="text" class="form-control" id="expiration" placeholder="MM/YY"
+                                        maxlength="5" required>
+                                    <div class="invalid-feedback">
+                                        Please enter MM/YY.
+                                        <div class="valid-tooltip">
+                                            Looks good!
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <input type="text" class="form-control" id="cvv" placeholder="CVV" maxlength="4"
+                                        required>
+                                    <div class="invalid-feedback">
+                                        Please enter CVV.
+                                        <div class="valid-tooltip">
+                                            Looks good!
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <label class="form-row">
+                            <input type="radio" name="check" class="card-input-element d-none" id="ApplePay">
+                            <div class="card card-body" data-toggle="collapse" data-target="#collapseApplePay"
+                                aria-expanded="false" aria-control="collapseApplePay">
+                                <img src="https://www.apple.com/v/apple-pay/m/images/shared/hero_logo__eo41ol524ga6_large_2x.png"
+                                    alt="Apple" width="150">
+                            </div>
+                            <div id="collapseApplePay" aria-labelledby="ApplePay" data-parent="#collapsePayment">
+                            </div>
+                        </label>
+
+                        <label class="form-row">
+                            <input type="radio" name="check" class="card-input-element d-none" id="PayPal">
+                            <div class="card card-body" data-toggle="collapse" data-target="#collapsePay"
+                                aria-expanded="false" aria-control="collapsePay">
+                                <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/paymentoptions-paypal-logo?hei=100&fmt=png-alpha&op_usm=0.5,0.5&qlt=80&.v=1574113296662"
+                                    alt="Pay" width="250">
+                            </div>
+                            <div id="collapsePay" aria-labelledby="PayPal" data-parent="#collapsePayment">
+                            </div>
+                        </label>
                     </div>
-
-                    <div class="col-mb-4 mb-3 collapse show" id="Cardinfo" data-parent="#collapsePayment">
-                        <p>Enter your card information:</p>
-                        <div class="form-row">
-                            <div class="col-md-6 mb-3">
-                                <input type="text" class="form-control" id="cardName"
-                                    placeholder="Full Name Display on Card" maxlength="34" required>
-                                <div class="invalid-feedback">
-                                    Please enter Full Name Display on Card.
-                                    <div class="valid-tooltip">
-                                        Looks good!
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <input type="text" class="form-control" id="cards"
-                                    placeholder="Credit/Debit Card Number" maxlength="16" required>
-                                <div class="invalid-feedback">
-                                    Please enter Card Number.
-                                    <div class="valid-tooltip">
-                                        Looks good!
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="col-md-4 mb-3">
-                                <input type="text" class="form-control" id="expiration" placeholder="MM/YY"
-                                    maxlength="5" required>
-                                <div class="invalid-feedback">
-                                    Please enter MM/YY.
-                                    <div class="valid-tooltip">
-                                        Looks good!
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 mb-3">
-                                <input type="text" class="form-control" id="cvv" placeholder="CVV" maxlength="4"
-                                    required>
-                                <div class="invalid-feedback">
-                                    Please enter CVV.
-                                    <div class="valid-tooltip">
-                                        Looks good!
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <label class="form-row">
-                        <input type="radio" name="check" class="card-input-element d-none" id="ApplePay">
-                        <div class="card card-body">
-                            <img src="https://www.apple.com/v/apple-pay/m/images/shared/hero_logo__eo41ol524ga6_large_2x.png"
-                                alt="Apple" width="150">
-                        </div>
-                    </label>
-
-                    <label class="form-row">
-                        <input type="radio" name="check" class="card-input-element d-none" id="PayPal">
-                        <div class="card card-body">
-                            <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/paymentoptions-paypal-logo?hei=100&fmt=png-alpha&op_usm=0.5,0.5&qlt=80&.v=1574113296662"
-                                alt="Pay" width="250">
-                        </div>
-                    </label>
-
                     <div class="col-md-16">
                         <button class="btn btn-primary btn-lg btn-block mb-4" type="submit">Continue to
                             checkout</button>
                     </div>
-
                 </form>
             </div>
         </div>
@@ -494,7 +500,7 @@
         })();
     </script>
     <script>
-        function pass() {
+        function ship() {
             if (document.getElementById("shippingAddress").checked === true) {
                 document.getElementById("firstNameship").required = false;
                 document.getElementById("lastNameship").required = false;
@@ -510,6 +516,22 @@
                 document.getElementById("statesship").required = true;
                 document.getElementById("zipship").required = true;
                 console.log("uncheck")
+            }
+        }
+    </script>
+    <script>
+        function pay() {
+            if (document.getElementById("CardPayment").checked === true) {
+                document.getElementById("cardName").required = false;
+                document.getElementById("cards").required = false;
+                document.getElementById("expiration").required = false;
+                document.getElementById("cvv").required = false;
+            }
+            else {
+                document.getElementById("cardName").required = true;
+                document.getElementById("cards").required = true;
+                document.getElementById("expiration").required = true;
+                document.getElementById("cvv").required = true;
             }
         }
     </script>
