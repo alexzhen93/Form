@@ -324,31 +324,80 @@
 
                     <h1 class="col-mb-4 ">Payment</h1>
                     <div class="accordion" id="collapsePayment">
-                        <div class="card mb-3 d-flex flex-row justify-content-between align-items-center">
-                            <div class="card-body">
-                                <h5>Credit or Debit Card</h5>
+                        <label class="form-row">
+                            <input type="radio" name="check" class="card-input-element d-none" id="CardPayment"
+                                data-toggle="collapse" data-target="#Cardinfo" aria-expanded="true"
+                                aria-controls="Cardinfo">
+                            <div class="card card-body">
+                                <h5 class="">Credit or Debit Card</h5>
                                 <p class="small">Apple Card, Visa, Mastercard, AMEX, Discover, UnionPay</p>
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="col-mb-4 mb-3 collapse" id="Cardinfo" data-parent="#collapsePayment">
+                        <p>Enter your card information:</p>
+                        <div class="form-row">
+                            <div class="col-md-6 mb-3">
+                                <input type="text" class="form-control" id="cardName"
+                                    placeholder="Full Name Display on Card" maxlength="34" required>
+                                <div class="invalid-feedback">
+                                    Please enter first name.
+                                    <div class="valid-tooltip">
+                                        Looks good!
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <input type="text" class="form-control" id="cards" placeholder="Credit/Debit Card Number"
+                                    maxlength="16" required>
+                                <div class="invalid-feedback">
+                                    Please enter first name.
+                                    <div class="valid-tooltip">
+                                        Looks good!
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-4 mb-3">
+                                <input type="text" class="form-control" id="expiration" placeholder="MM/YY"
+                                    maxlength="5" required>
+                                <div class="invalid-feedback">
+                                    Please enter first name.
+                                    <div class="valid-tooltip">
+                                        Looks good!
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <input type="text" class="form-control" id="cvv" placeholder="CVV"
+                                    maxlength="4" required>
+                                <div class="invalid-feedback">
+                                    Please enter first name.
+                                    <div class="valid-tooltip">
+                                        Looks good!
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-mb-4 mb-3 collapse show" id="">
-                        <p>Enter your card information:</p>
-                        <input type="text" name="cards" id="cardNumber" placeholder="Credit/Debit Card Number">
 
-                    </div>
-                    <div class="card mb-3">
-                        <div class="card-body">
+                    <label class="form-row">
+                        <input type="radio" name="check" class="card-input-element d-none" id="ApplePay">
+                        <div class="card card-body">
                             <img src="https://www.apple.com/v/apple-pay/m/images/shared/hero_logo__eo41ol524ga6_large_2x.png"
-                                alt="ApplePay" width="150">
+                                alt="Apple" width="150">
                         </div>
-                    </div>
+                    </label>
 
-                    <div class="card mb-3">
-                        <div class="card-body">
+                    <label class="form-row">
+                        <input type="radio" name="check" class="card-input-element d-none" id="PayPal">
+                        <div class="card card-body">
                             <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/paymentoptions-paypal-logo?hei=100&fmt=png-alpha&op_usm=0.5,0.5&qlt=80&.v=1574113296662"
-                                alt="ApplePay" width="230">
+                                alt="Pay" width="150">
                         </div>
-                    </div>
+                    </label>
 
                     <div class="col-md-16">
                         <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
