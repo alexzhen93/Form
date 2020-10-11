@@ -218,7 +218,7 @@
                         <div class="custom-control custom-checkbox">
                             <input type="checkbox" class="custom-control-input" id="shippingAddress"
                                 data-toggle="collapse" data-target="#SameAsShippingAddress" aria-expanded="true"
-                                aria-controls="SameAsShippingAddress" checked>
+                                aria-controls="SameAsShippingAddress" onsubmit="pass()" onclick="pass()">
                             <label for="shippingAddress" class="custom-control-label">Shipping address is the same as my
                                 billing
                                 address</label>
@@ -230,13 +230,13 @@
                         </div>
                         <hr class="mb-3">
                     </div>
-                    <div class="collapse" id="SameAsShippingAddress" data-parent="#collapseShipping">
+                    <div class="collapse show" id="SameAsShippingAddress" data-parent="#collapseShipping">
                         <h1 class="col-mb-4">
                             Shipping Address</h1>
                         <legend class="col-mb-3">Enter your name and address:</legend>
                         <div class="form-row">
                             <div class="col-md-6 mb-3">
-                                <input type="text" class="form-control" id="firstName" placeholder="First Name"
+                                <input type="text" class="form-control" id="firstNameship" placeholder="First Name"
                                     maxlength="14" required>
                                 <div class="invalid-feedback">
                                     Please enter first name.
@@ -246,7 +246,7 @@
                                 </div>
                             </div>
                             <div class="col-md-6 mb-3">
-                                <input type="text" class="form-control" id="lastName" placeholder="Last Name"
+                                <input type="text" class="form-control" id="lastNameship" placeholder="Last Name"
                                     maxlength="20" required>
                                 <div class="invalid-feedback">
                                     Please enter last name.
@@ -259,7 +259,7 @@
 
                         <div class="form-row">
                             <div class="col-md-6 mb-3">
-                                <input type="text" class="form-control" id="address" placeholder="Street Address"
+                                <input type="text" class="form-control" id="addressship" placeholder="Street Address"
                                     maxlength="30" required>
                                 <div class="invalid-feedback">
                                     Please enter address.
@@ -276,7 +276,7 @@
 
                         <div class="form-row">
                             <div class="col-md-4 mb-3">
-                                <select value="US" class="custom-select" id="Country" required>
+                                <select value="US" class="custom-select" id="Country">
                                     <option value="AU">Australia</option>
                                     <option value="CA">Canada</option>
                                     <option value="CN">China</option>
@@ -299,7 +299,7 @@
                                 </div>
                             </div>
                             <div class="col-md-4 mb-3">
-                                <input type="text" class="form-control" id="states" placeholder="State" maxlength="30"
+                                <input type="text" class="form-control" id="statesship" placeholder="State" maxlength="30"
                                     required>
                                 <div class="invalid-feedback">
                                     Please enter State.
@@ -309,7 +309,7 @@
                                 </div>
                             </div>
                             <div class="col-md-4 mb-3">
-                                <input type="text" class="form-control" id="zip" placeholder="Zip Code" maxlength="10"
+                                <input type="text" class="form-control" id="zipship" placeholder="Zip Code" maxlength="10"
                                     required>
                                 <div class="invalid-feedback">
                                     Please enter Zip code.
@@ -349,8 +349,8 @@
                                 </div>
                             </div>
                             <div class="col-md-6 mb-3">
-                                <input type="text" class="form-control" id="cards" placeholder="Credit/Debit Card Number"
-                                    maxlength="16" required>
+                                <input type="text" class="form-control" id="cards"
+                                    placeholder="Credit/Debit Card Number" maxlength="16" required>
                                 <div class="invalid-feedback">
                                     Please enter first name.
                                     <div class="valid-tooltip">
@@ -371,8 +371,8 @@
                                 </div>
                             </div>
                             <div class="col-md-4 mb-3">
-                                <input type="text" class="form-control" id="cvv" placeholder="CVV"
-                                    maxlength="4" required>
+                                <input type="text" class="form-control" id="cvv" placeholder="CVV" maxlength="4"
+                                    required>
                                 <div class="invalid-feedback">
                                     Please enter first name.
                                     <div class="valid-tooltip">
@@ -395,7 +395,7 @@
                         <input type="radio" name="check" class="card-input-element d-none" id="PayPal">
                         <div class="card card-body">
                             <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/paymentoptions-paypal-logo?hei=100&fmt=png-alpha&op_usm=0.5,0.5&qlt=80&.v=1574113296662"
-                                alt="Pay" width="150">
+                                alt="Pay" width="250">
                         </div>
                     </label>
 
@@ -418,7 +418,46 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
         crossorigin="anonymous"></script>
-
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function () {
+            'use strict';
+            window.addEventListener('load', function () {
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+    </script>
+    <script>
+        function pass() {
+            if (document.getElementById("shippingAddress").checked === true) {
+                document.getElementById("firstNameship").required = false;
+                document.getElementById("lastNameship").required = false;
+                document.getElementById("addressship").required = false;
+                document.getElementById("statesship").required = false;
+                document.getElementById("zipship").required = false;
+                console.log("check")
+            }
+            else {
+                document.getElementById("firstNameship").required = true;
+                document.getElementById("lastNameship").required = true;
+                document.getElementById("addressship").required = true;
+                document.getElementById("statesship").required = true;
+                document.getElementById("zipship").required = true;
+                console.log("uncheck")
+            }
+        }
+    </script>
 </body>
 
 </html>
